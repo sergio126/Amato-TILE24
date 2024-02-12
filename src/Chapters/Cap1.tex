@@ -6,240 +6,171 @@
 \label{chp:Acustica}
 %************************************************
 
-Questo capitolo affronta l'ambito fisico della produzione e dispersione dell'onda sonora
+Questo capitolo affronta il processo della produzione, dispersione e percezione dell'onda sonora. Il campo della scienza che si occupa degli studi relativi alla fisica del suono si chiama \emph{acustica}, i cui primi passi sono stati mossi già dai primi \textit{pitagorici} portando innovazione ancora oggi. Di studi più recenti sulla percezione dell'evento sonoro da parte dell'uomo se ne occupa invece la \textit{psicoacustica}.  
 
-
-
-\section{Fisica Sonora}
-
+\section{Il Suono}
 Per sintetizzare un riverberatore è necessario prima comprendere, dal punto di vista fisico, cosa accade nel momento in cui un suono viene generato e del suo comportamento nello spazio circostante.
 
-Per suono intendiamo un'alterazione di pressione, velocità e posizione delle particelle, propagata in un mezzo elastico, o la sovrapposizione di tali alterazioni.
+Per \textbf{\textit{suono}} intendiamo un'alterazione di pressione, velocità e posizione delle particelle, propagata in un mezzo elastico, o la sovrapposizione di tali alterazioni.
 Parlando di suono ci riferiamo anche alla percezione definita dalle nostre orecchie delle alterazioni sopracitate (H. F. Olson - Elements of acoustical engineering - 1957 pag2).
 
 Il suono è prodotto quando il mezzo di propagazione (nella maggior parte dei casi l'aria)
 è messo in vibrazione da un qualsiasi evento di natura meccanica, per esempio, l'oscillazione di una corda o il battere di un oggetto su una superficie solida  (Harry f.olson - Elements of acoustical engineering - 1957 pag2).
 
 Queste vibrazioni, propagate in modo sferico, raggiungono il nostro orecchio avente la funzione di trasduttore (trasforma l'energia cinetica in impulsi elettrici) risultando nella nostra percezione dell'evento sonoro.
-
-
-
+\subsection{Caratteristiche}
 Le caratteristiche principali, sempre dal punto di vista fisico del suono percepito sono dunque(D. Davis - Sound System Engineering - 2013 pag 171):
 \begin{itemize}
-      \item Periodo: Il tempo di completamento di un ciclo (ovvero quando, un segnale periodico esprime tutti i suoi valori ricorrenti) espresso in secondi
-      \item Frequenza: il numero di cicli in 1 secondo, si esprime in hertz
-
-      \item Lunghezza d'onda: la distanza tra 2 massimi consecutivi, si esprime in metri
-
-      \item Ampiezza: massima escursione dal punto di equilibrio
-
-      \item Velocità dell'onda: velocità di movimento del fronte d'onda nel mezzo, si esprime in metri al secondo.
-
+      \item \emph{Periodo}: 
+      Il tempo di completamento di un ciclo (ovvero quando, un segnale periodico esprime tutti i suoi valori ricorrenti) espresso in secondi
+      \item \emph{Frequenza}:
+      il numero di cicli in 1 secondo, si esprime in hertz
+      \item \emph{Lunghezza d'onda}:
+      la distanza tra 2 massimi consecutivi, si esprime in metri
+      \item \emph{Ampiezza}: 
+      massima escursione dal punto di equilibrio
+      \item \emph{Velocità dell'onda}: 
+      velocità di movimento del fronte d'onda nel mezzo, si esprime in metri al secondo.
 \end{itemize}
-\section{Use}
 
-This package is shaped to be executed on a \emph{complete} installation of \TeX{}~Live or MiK\TeX, and uses freely available fonts.
-It works with the \clsname{KOMA-Script} classes (\clsname{scrreprt}, \clsname{scrbook} and \clsname{scrartcl}) and requires the \pkgname{classicthesis} package. \arsclassica{} must be loaded \emph{after} \pkgname{classicthesis}:
-\begin{code}
-\documentclass[\meta{\dots\unkern}]{scrreprt} % or scrbook or scrartcl
+Ovviamente queste caratteristiche non sono universali ma dipendono da fattori ambientali che ne definiscono i valori. Due eventi sonori, di partenza identici, non verranno percepiti ugualmente al variare delle condizioni esterne.
+Queste condizioni che influiscono sul suono sono:
 
-\usepackage[\meta{\dots\unkern}]{classicthesis}
-\usepackage{arsclassica}
+\subsubsection{Distanza dalla sorgente}
 
-\begin{document}
-\dots
-\end{document}
-\end{code}
+La distanza dalla sorgente sonora è risaputo comportare una diminuzione di intensità. Dato che l’onda si propaga in modo sferico, segue la legge dell’inverso del quadrato, comportando una diminuzione di 6 db ad ogni raddoppio della distanza.
 
-For example, this document has been produced with the following code:
-\begin{code}
-\documentclass[a4paper,twoside,openright,titlepage,
-               headinclude,footinclude,BCOR5mm,
-               numbers=noenddot,cleardoublepage=empty,
-               tablecaptionabove]{scrreprt}
+\subsubsection{Conformazione del gas/Temperatura e densità}
 
-\usepackage{\meta{\dots\unkern}}
-\usepackage{subfig}
-\usepackage[eulerchapternumbers,subfig,beramono,eulermath,pdfspacing]%
-           {classicthesis}
-\usepackage{arsclassica}
-
-\begin{document}
-\dots
-\end{document}
-\end{code}
-
-It is recommended to use the \optname{beramono} and \optname{eulerchapternumbers} options together with \arsclassica.
-
-
-
-\section{Style}
-
-The typographical style achieved with \arsclassica{} differs from \classicthesis{} in the following points:
+Parlare di temperatura è importante in quanto è un fattore che influisce in diversi altri fattori presi in esame in questa tesi, ed è inoltre il punto di partenza della mia ricerca.
+Dalla temperatura dipendono infatti la velocità del suono nel mezzo e il valore di assorbimento atmosferico.
+La velocità del suono possiamo calcolarla secondo la seguente formula:
+\begin{equation}
+C=\sqrt{\frac{\gamma Ps}{\rho}}
+\end{equation}
+dove
 \begin{itemize}
-\item use of Iwona font, by Janusz Nowacki, for the sectioning unit titles (chapters, sections, subsections, sub-subsections, paragraphs and subparagraphs), for the description list labels, the headlines and the caption labels (\classicthesis{} doesn't use any sans serif font);
-\item customized chapter numbers;
-\item semi-transparent headlines; the headlines are separated from the page number by a small rule;
-\item caption labels in boldface (\classicthesis{} doesn't use any boldface font);
-\item itemize lists with semi-transparent bullets.
+      \item $\gamma$ è il coefficiente di dilatazione adiabatica 
+      \item $Ps$ è la pressione circostante
+      \item $\rho$ è la densità del gas
 \end{itemize}
-
-\arsclassica{} is designed  to provide a ready-to-use typographical style: for this reason it has no loading options and it is \emph{not} configurable or customizable in any way. If you change the previous settings, you'll risk to destroy the balance of the style, so it is \emph{highly recommended} to keep them unchanged.
-
-One of the principles of \LaTeX{} is that it allows the author to take no interest in the typographical questions, permitting him to focus only on the structure and the contents of his document. This fact should always be kept in mind: using a style written by others, the user accepts all the typographical settings chosen for him by the author of the style, and he isn't forced to study typography to fine-tune the layout of his publications. This is the case of \arsclassica{} too: if you change its settings, you'll deny this philosophy and, consequently, you'll have to study (a lot of) typography to achieve acceptable results.
-
-The style achieved with \arsclassica{} is \emph{not} therefore configurable or customizable. The typographical style is very personal: if you like this package and find attractive the idea to take no interest in the problem of the style definition, then you'll use \arsclassica{} with satisfaction; otherwise, if you have different needs or you aren't satisfied with the layout of the package, then you should try other classes or packages, even building your own style.
-
-
-
-\section{Important}
-
-To write a document according to the \arsclassica{} style, you have to follow some very simple rules.
+La densità del gas, come per il coefficiente di dilatazione adiabatica, varia a seconda della temperatura che, data la sua presenza in varie equazioni, diviene un fattore determinante per la velocità del suono e dunque per le caratteristiche del riverbero.
+Possiamo calcolare la densità tramite la seguente formula (pag 173):
+\begin{equation}
+\rho = \frac{stp*hg}{1+(t*hg*0.00367)}
+\end{equation}
+di cui
 \begin{itemize}
-\item Don't change \emph{for any reason} the \arsclassica{} settings (fonts, text body size, colors, \dots).
-\item The sectioning unit titles (chapters, section, subsections, \dots) have to be \emph{one line long}, possibly in \emph{plain text} (no symbols, formulas or code fragments). If you have titles longer than one line, try and rephrase them: you can almost always do it.
-\item In the table of contents and in the list of tables and figures, captions have to be \emph{one line long}, possibly in \emph{plain text}. Use the optional argument of sectioning commands and of \cmdname{caption}, if necessary.
-\item Don't use \optname{tocaligned} and \optname{dottedtoc} options of \classicthesis: the default table of contents does the job very well (see the documentation of \classicthesis{} for a nice discussion of this point).
-\item Don't use vertical or double rules in your tables (see the documentation of \pkgname{booktabs}).
-\item Use footnotes and margin notes very sparingly.
-\item If your document includes graphs and plots, draw them using \LaTeX{} (by \pkgname{Ti\emph{k}Z} and \pkgname{pgfplots}, for example) and not an external software. This is the only way to get the best typographical outcome.
+      \item $stp$ è la densità del gas a temperatura e pressione standard;
+      \item $hg$ è la pressione barometrica del mercurio in centimetri;
+      \item $t$ è la temperatura in gradi Celsius;
+      \item $0.00367$ è il  coefficiente di dilatazione termica,una costante comune a tutti i gas
 \end{itemize}
+Possiamo verificare la densità standard dei gas grazie alla seguente tabella 
+\begin{center}
+\includegraphics{gasdensita}
+\end{center}
+\subsubsection{Assorbimento atmosferico}
+Rappresenta l’effetto di dissipazione dell’energia data dall’azione combinata di viscosità e calore del mezzo. Perdite di energia aggiuntive sono dovute all’umidità assoluta. Questo effetto comporta inoltre un aumento dell’attenuazione con l’aumento delle frequenze.
+\begin{center}
+\includegraphics{assorbimento}
+\end{center}
+\subsubsection{Umidità}
+Il livello di umidità del gas si riferisce alla presenza o meno di molecole d’acqua nel mezzo. La sua influenza non è tanto impattante per quanto riguarda la velocità dell’onda, ma sull’assorbimento acustico totale comportando un abbattimento di intensità a diverse frequenze.
+\subsubsection{Fenomeni di Riflessione}
+Le riflessioni sono alla base di ciò che chiamiamo riverbero.
+Consistono nella riflessione di un’onda sonora sulle diverse superfici che 
+circondano l’evento acustico, esse siano pareti oppure oggetti che si interpongono
+nella propagazione dell’onda.
+
+Affinché ci sia una riflessione, la superficie riflettente deve necessariamente essere
+più larga di almeno $\frac{1}{4}$ della lunghezza d’onda.
+Quando l’oggetto è più piccolo di questa soglia si ha una diffrazione, ovvero l’onda sonora curva attorno ad esso.
+
+Un altro fenomeno, che possiamo considerare inverso alla riflessione, è \emph{l’assorbimento}.
+L’assorbimento è dovuto alle proprietà del materiale che, appunto, al posto di riflettere l’onda assorbono parte dell’energia, trattenendola e restituendo un’onda smorzata.
+Più un materiale è assorbente, più sarà rapido il decadimento dell’energia sonora nello spazio fino a tornare in una situazione di stabilità.
+La condizione di stabilità sussiste infatti, quando la quantità di energia assorbita è la medesima dell’energia prodotta.
+\subsubsection{Fenomeni di Rifrazione}
+La rifrazione similmente alla riflessione si ha quando è il mezzo di trasmissione a subire delle variazioni, comportando dunque una differenza nella propagazione in atto. Queste variazioni possono essere, per esempio, temperatura, densità o direttamente un mezzo diverso, basti pensare ad un onda prodotta in aria che incontra una superficie d’acqua.
+\section{Psicoacustica}
+Altro aspetto da tenere in considerazione è il nostro sistema uditivo. In un sistema lineare in frequenza data in input una lista di frequenze, l’output conterrà le stesse, anche se magari dissimili in ampiezza e fase.
+Il nostro apparato uditivo, infatti, a causa di secoli di evoluzione e cambiamenti ha sviluppato dei comportamenti che non lo rendono un sistema lineare, portando dunque a delle inesattezze dal punto di vista percettivo.
+Ecco alcuni esempi di fenomeni di non linearità a cui siamo sottoposti:
+\begin{itemize}
+      \item \emph{Distorsione armonica}:
+      È la percezione di armoniche superiori di un tono puro. Questa distorsione può essere dovuta ad una pressione eccessiva dell’onda sul timpano;
+      \item \emph{Tono di combinazione}:
+Detto anche \textit{“terzo suono di Tartini”} è un effetto psicoacustico che comporta nella percezione di un terzo suono, nonostante in input i suoni siano stati solo 2.
+La frequenza del tono ricostruito non sarebbe altro che la differenza tra i 2 toni di partenza
+      \item \emph{Curve isofoniche}:
+Il fenomeno delle curve isofoniche comporta una diversa percezione di ampiezza a per diverse frequenze ma aventi stesso SPL. Per fare un esempio una sinusoide da 1000 Hz a 110 Db SPL ha la stessa percezione di una sinusoide da 3000 Hz ma a 100 Db SPL (ballou - Handbook for Sound Engineers - 2008 - pag 43).
+\begin{center}
+\includegraphics{isofoniche}
+\end{center}
+Questo è anche il motivo per il quale siamo più sensibili nella banda intorno ai 4 KHz, comportando dolore nell’ascoltatore se sottoposto a db elevati.
+\end{itemize}
+\subsubsection*{Percezione della distanza}
+Più interessante ai fini della tesi è la percezione della distanza, tema chiave nello studio degli spazi e della propagazione del suono.
+È noto che, duplicata la distanza tra fonte sonora e ascoltatore, il SPL decade di 6 dB.
+Nonostante questo, affinché abbiamo la percezione della duplicazione della distanza c’è bisogno della diminuzione di almeno 20 dB (j. Blauert spatial hearing).
+
+Un elemento che però ci permette di comprendere quando una fonte è lontana è la sua composizione spettrale, infatti, a causa dell’assorbimento dell’aria (del mezzo per essere più precisi) le frequenze alte saranno assorbite maggiormente, comportando una presenza più elevata di basse frequenze.
+
+Per questo, in modo tale da replicare distanza e vicinanza dalla fonte sonora, oltre a questi accorgimenti è da tenere in considerazione il rapporto tra suono diretto e riverberato.
+In un ambiente reale infatti, è proprio il rapporto tra le due sorgenti a determinare dove e quanto è distante un evento sonoro.
+\section{Spazio}
+Come citato poc'anzi quando si parla di suono bisogna considerare quindi lo spazio e il mezzo in cui l'onda si propaga.
+
+Possiamo classificare gli spazi in diverse categorie, le principali sono (Davis - Pag 178):
+\begin{itemize}
+\item Free Field:
+È definito così uno spazio uniforme, libero da ostacoli che potrebbero produrre delle riflessioni o rifrazioni e non contaminato da sorgenti sonore estranee.
+Esempi di questo tipo sono le sale anecoiche (senza eco),camere particolari il cui scopo è quello di ridurre al minimo le riflessioni delle onde, utili per eseguire test precisi su apparecchiature audio.
+\item Reverberant field:
+È uno spazio chiuso, con pochissimo assorbimento acustico, in cui la pressione sonora è uniforme in ogni punto e le onde si propagano allo stesso modo in tutte le direzioni.
+Caratteristiche di questo tipo possiamo trovarle in luoghi come camere vuote o cavità.
+\item Semireverberant Field:
+È il tipo di spazio più comune che possiamo incontrare, nel quale l’energia è sia assorbita che riflessa. L’energia si muove in più direzioni ma è comunque percepibile il punto di origine della fonte di generazione dell’evento sonoro.
+\end{itemize}
+\subsection{Risposta all'impulso}
+Al giorno d’oggi conosciamo una tecnica in grado di eseguire una fotografia delle caratteristiche acustiche in grado di descrivere come il suono si propaga da un punto di emissione ad un ricevitore. 
+
+Parliamo di \textit{Risposta all’impulso} ovvero del modello fisico-matematico di un sistema lineare, non dipendente dal tempo, composto solo da un input ed un output (A.Farina - ROOM IMPULSE RESPONSES AS TEMPORAL AND SPATIAL FILTERS - 2006).
+
+Le informazioni contenute sono sia relative al dominio del tempo, ad esempio riflessioni e ritardi nella propagazione che, relative al dominio della frequenza, comportando quindi modifiche dal punto di vista spettrale.
+
+Il sistema utilizzato viene detto \textit{Black box} che, come detto in precedenza è composto da un singolo input ed un singolo output. All’interno di questa black box gli elementi che concorrono all’acquisizione dei dati matematici dello spazio che si vuole registrare sono:
+\begin{itemize}
+\item Un generatore di segnale: Tipicamente un pc;
+\item Un amplificatore di segnale;
+\item Un diffusore di segnale: il quale riproduce il segnale nello spazio in modo omnidirezionale;
+\item Un ricevitore: un microfono anch’esso omnidirezionale, in quanto vogliamo escludere la direzionalità dallo studio.
+\end{itemize}
+Per misurare quindi la risposta all'impulso riproduciamo il segnale attraverso l’altoparlante nello spazio e contemporaneamente registriamo come, quel segnale, si propaga in quel determinato spazio e in quelle determinate condizioni, attraverso il microfono.
+
+Il segnale originale consiste in uno sweep esponenziale il quale parte dalla frequenza $f_1$, termina a frequenza $f_2$ in $t$ secondi.
+
+Il segnale riverberato conterrà al suo interno componenti armoniche non presenti nell’originale, che corrispondono alla risposta lineare in frequenza dello spazio.
+Attraverso un processo di convoluzione, ampiamente spiegato e perfezionato dal prof. A Farina, siamo in grado di restituire la risposta all'impulso del sistema lineare.
+
+È da tenere conto che però una singola registrazione non è in grado di descrivere tutto lo spazio. La risposta all’impulso, come già detto, è relativa soltanto al punto in cui è posizionato il ricevitore e soltanto per il punto da cui è emesso il suono. Per la mappatura dello spazio per restituire un'immagine fedele dello spazio sono necessarie numerose registrazioni. Come per una fotografia, maggiore è il numero di “pixel”, più definita sarà l’immagine. Per questo è un lavoro che, soprattutto per luoghi ampi, richiede moltissimo tempo e spesso si tende ad effettuare un numero di registrazioni non necessario a restituire un modello fedele.
+
+\subsection{Storia dello studio degli spazi}
+Storicamente, in ambito musicale, lo spazio è stato sempre presente ed essenziale durante le performance. Basti pensare agli auditorium greci, dove la conformazione permette sia un rinforzo in termini di ampiezza, ma anche una forte intelligibilità delle parole in modo tale da raggiungere chiaramente tutti i presenti.
+Gli ascoltatori, posti ad un'angolazione di circa 120 gradi, ricevevano il suono diretto dall’oratore, seguito delle riflessioni provenienti sia dal pavimento dell’orchestra, che dal retro del palco, anche se con minor intensità.
+
+Il palco, inoltre, aveva un’ altezza compresa tra 1m e 3.6m, comportando una differenza nell’angolo di incidenza del suono diretto (Auditorium Acoustics and Architectural Design Di Michael Barron).
+Infine, un altro accorgimento degli architetti greci, i quali avevano scoperto le proprietà di assorbimento, era il posizionamento tra le sedute di vasi contenenti ceneri, i quali avevano lo scopo di assorbire l’energia sonora che sarebbe stata riflessa indietro verso il palco.
+
+Un’altro esempio in cui vediamo lo spazio come protagonista, è il caso degli organi, in cui il luogo è la vera e propria cassa armonica dello strumento.
+L’acustica dell’organo è fortemente legata alla sua ubicazione, infatti, a differenza di altri strumenti musicali i quali possono essere spostati e trasportati, per l’organo non è possibile. Inoltre i luoghi provvisti di organo sono spesso molto riverberanti, come ad esempio le chiese e i teatri, e questo concorre alla definizione timbrica dello strumento
 
 
+\subsubsection{Lo spazio come parametro}
+Si è dovuto attendere però circa gli anni 60 affinchè lo spazio diventasse un vero e proprio parametro compositivo.
 
-\section{Examples}
-
-\begin{figure}
-\centering
-\subfloat[Asia personas duo]
-{\includegraphics[width=.45\columnwidth]{Lorem}} \quad
-\subfloat[Pan ma signo]
-{\label{fig:example-b}%
-\includegraphics[width=.45\columnwidth]{Ipsum}} \\
-\subfloat[Methodicamente o uno]
-{\includegraphics[width=.45\columnwidth]{Dolor}} \quad
-\subfloat[Titulo debitas]
-{\includegraphics[width=.45\columnwidth]{Sit}}
-\caption[Tu duo titulo debitas latente]{Tu duo titulo debitas latente}
-\label{fig:example}
-\end{figure}
-
-Please note that the content of this section is just some dummy text. It isn't a real language.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-
-\subsection*{A subsection}
-
-\lipsum[2]
-
-\subsubsection*{A sub-subsection}
-
-\lipsum[7]
-
-\paragraph{A paragraph}
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna.
-
-\paragraph{Another paragraph}
-Cras nec ante, pellentesque a nulla, cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tincidunt urna
-
-\bigskip
-
-Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna, vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque a nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tincidunt urna.
-
-\begin{description}
-\item[Mane] Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-\item[Tekel] Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-\item[Fares] Nam arcu libero, nonummy eget, consectetuer
-id, vulputate a, magna.
-\end{description}
-
-\begin{table}
-\caption{Lorem ipsum dolor sit amet}
-\centering
-\begin{tabular}{ll}
-\toprule
-\textbf{Alkaloid} & \textbf{Origin} \\
-\midrule
-atropine & belladonna \\
-morphine & poppy \\
-nicotine & tobacco \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Suspendisse vel felis. Ut lorem lorem, interdum eu, tincidunt sit amet, laoreet vitae, arcu. Aenean faucibus pede eu ante. Praesent enim elit, rutrum at, molestie non, nonummy vel, nisl. Ut lectus eros, malesuada sit amet, fermentum eu, sodales cursus, magna. Donec eu purus. Quisque vehicula, urna sed ultricies auctor, pede lorem egestas dui, et convallis elit erat sed nulla.
-
-\subsection*{Some formulas}
-
-Una formula in linea viene incorporata nel testo: $\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}$, per esempio. Come si osserva, \LaTeX{} fa \emph{il possibile} per comprimerla e modificare il meno possibile l'interlinea nel capoverso che la contiene.
-Una formula in display viene invece composta da \LaTeX{} su linee a parte, separate dal contesto con adeguati spazi bianchi per metterla in mostra e farla risaltare sulla pagina.
-\begin{equation}
-\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2}= \frac{\pi^2}{6}
-\end{equation}
-Come si osserva, ora la formula risulta centrata, non compressa, e tutti i suoi elementi occupano il giusto spazio con un risultato finale di grande respiro.
-
-Integer tempus convallis augue. Etiam facilisis. Nunc elementum fermentum wisi. Aenean placerat. Ut imperdiet, enim sed gravida sollicitudin, felis odio placerat quam, ac pulvinar elit purus eget enim.
-
-\begin{equation}
-\int_a^{a+T}f(x)\,dx= \int_0^T f(x)\,dx
-\qquad
-\oint f(z)\,dz=2\pi i
-\end{equation}
-
-Nulla malesuada porttitor diam. Donec felis erat, congue non, volutpat at, tincidunt tristique, libero. Vivamus viverra fermentum felis. Donec non- ummy pellentesque ante.
-
-\begin{equation}
-f(x_1,\dots,x_n)=  \prod_{k=1}^n x_k
-\qquad
-\sum_{k=1}^n x_k^2=1
-\qquad
-\biggl(\sum_n x_n^2\biggr)^{1/2}
-\end{equation}
-
-\lipsum[2]
-
-\begin{equation}
-\begin{bmatrix}
-a_{11} & \dots & a_{1n} \\
-a_{21} & \dots & a_{2n} \\
-\hdotsfor{3} \\
-a_{n1} & \dots & a_{nn}
-\end{bmatrix}
-\end{equation}
-
-\lipsum[4]
-
-\begin{equation}
-\lim_{x\to 0}
-\frac{\sin x}{x}=1 \qquad
-\lim_{n\to +\infty}f_n=\delta
-\end{equation}
-
-Fusce mauris. Vestibulum luctus nibh at lectus. Sed bibendum, nulla a faucibus semper, leo velit ultricies tellus, ac venenatis arcu wisi vel nisl. Vestibulum diam.
-
-\begin{equation}
-n!=
-\begin{cases}
-1       & \text{if $n=0$} \\
-n(n-1)! & \text{if $n\ge 1$}
-\end{cases}
-\end{equation}
-
-Ut lectus eros, malesuada sit amet, fermentum eu, sodales cursus, magna. Donec eu purus. Quisque vehicula, urna sed ultricies auctor, pede lorem egestas dui, et convallis elit erat sed nulla. Donec luctus. Curabitur et nunc. Aliquam dolor odio, commodo pretium, ultricies non, pharetra in, velit.
-
-\begin{equation}
-x_G=
-\frac{\displaystyle
-      \sum_{i=1}^n m_ix_i}
-{\displaystyle\sum_{i=1}^n m_i}
-\end{equation}
-
-\lipsum[6]
-
-\begin{equation}
-\kappa =\frac{\xi}{E_{\textrm{max}}}
-\qquad
-E_{\textup{max}} =\frac{2 m_{\textup{e}} \beta^2\gamma^2 }{1 +2\gamma m_{\textup{e}}/m_{\textrm{x}} + ( m_{\textup{e}}/m_{\textup{x}})^2}
-\end{equation}
-
-\lipsum[8]
+\emph{“Gesang der Jünglinge"} di Karlheinz Stockhausen è un’opera importantissima per l’epoca in cui è stata composta. Il brano, nato pentafonico e successivamente ridimensionato in quadrifonia, rappresenta l’avanguardia del serialismo integrale. Come accennato in precedenza, questo lavoro è il primo esempio in cui vediamo la gestione dello spazio come parametro compositivo, al pari di ampiezza, altezza e timbro.
+Gli altoparlanti, disposti circolarmente attorno agli ascoltatori, creano uno spazio in cui immergersi permettendo complessi movimenti tra gli stessi.
+Vengono infine introdotti termini quali “Intervallo spaziale” e “Accordi di spazio”.
+\subsection{In conclusione}

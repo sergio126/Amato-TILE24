@@ -22,7 +22,6 @@ Queste vibrazioni, propagate in modo sferico, raggiungono il nostro orecchio ave
 
 \subsection{Caratteristiche}
 Le caratteristiche principali, sempre dal punto di vista fisico del suono percepito sono dunque:
-
 \begin{itemize}
       \item \emph{Periodo}: 
       Il tempo di completamento di un ciclo (ovvero quando, un segnale periodico esprime tutti i suoi valori ricorrenti) espresso in secondi
@@ -37,6 +36,7 @@ Le caratteristiche principali, sempre dal punto di vista fisico del suono percep
 \end{itemize}
 (D. Davis - Sound System Engineering - 2013 pag 171)
 \bigskip
+
 Ovviamente queste caratteristiche non sono universali ma dipendono da fattori ambientali che ne definiscono i valori. Due eventi sonori, di partenza identici, non verranno percepiti ugualmente al variare delle condizioni esterne.
 Queste condizioni che influiscono sul suono sono:
 
@@ -49,11 +49,9 @@ La distanza dalla sorgente sonora è risaputo comportare una diminuzione di inte
 Parlare di temperatura è importante in quanto è un fattore che influisce in diversi altri fattori presi in esame in questa tesi, ed è inoltre il punto di partenza della mia ricerca.
 Dalla temperatura dipendono infatti la velocità del suono nel mezzo e il valore di assorbimento atmosferico.
 La velocità del suono possiamo calcolarla secondo la seguente formula:
-
 \begin{equation}
 C=\sqrt{\frac{\gamma Ps}{\rho}}
 \end{equation}
-
 dove
 
 \begin{itemize}
@@ -64,7 +62,6 @@ dove
 
 La densità del gas, come per il coefficiente di dilatazione adiabatica, varia a seconda della temperatura che, data la sua presenza in varie equazioni, diviene un fattore determinante per la velocità del suono e dunque per le caratteristiche del riverbero.
 Possiamo calcolare la densità tramite la seguente formula (pag 173):
-
 \begin{equation}
 \rho = \frac{stp*hg}{1+(t*hg*0.00367)}
 \end{equation}
@@ -78,10 +75,13 @@ di cui:
       \item $0.00367$ è il  coefficiente di dilatazione termica,una costante comune a tutti i gas
 \end{itemize}
 
-Possiamo verificare la densità standard dei gas grazie alla seguente tabella 
+Possiamo verificare la densità standard dei gas a tabella \ref{tab:dens}
 
 \bigskip
-
+\begin{table}[h]
+\centering
+\caption{Tabella raffigurante la densità di alcuni gas a \emph{}}
+\label{tab:dens}
 \begin{tabular}{lcr}
 \toprule
 Nome del gas & Simbolo & Densità($kg/m^2$) \\
@@ -98,11 +98,12 @@ Oxygen & $O$ &1.4290 \\
 Water Vapour & $H_2O$ & 0.804 \\
 \bottomrule
 \end{tabular}
+\end{table}
+\smallskip
 
 \subsubsection{Assorbimento atmosferico}
-
 Rappresenta l’effetto di dissipazione dell’energia data dall’azione combinata di viscosità e calore del mezzo. Perdite di energia aggiuntive sono dovute all’umidità assoluta. Questo effetto comporta inoltre un aumento dell’attenuazione con l’aumento delle frequenze.
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=%
 0.50\textwidth]{assorbimento}
@@ -111,7 +112,6 @@ Rappresenta l’effetto di dissipazione dell’energia data dall’azione combin
 \end{figure}
 
 \subsubsection{Umidità}
-
 Il livello di umidità del gas si riferisce alla presenza o meno di molecole d’acqua nel mezzo. La sua influenza non è tanto impattante per quanto riguarda la velocità dell’onda, ma sull’assorbimento acustico totale comportando un abbattimento di intensità a diverse frequenze.
 
 \subsubsection{Fenomeni di Riflessione}
@@ -149,7 +149,8 @@ La frequenza del tono ricostruito non sarebbe altro che la differenza tra i 2 to
 \item Curve isofoniche:
 Il fenomeno delle curve isofoniche comporta una diversa percezione di ampiezza a per diverse frequenze ma aventi stesso SPL. Per fare un esempio una sinusoide da 1000 Hz a 110 Db SPL ha la stessa percezione di una sinusoide da 3000 Hz ma a 100 Db SPL (ballou - Handbook for Sound Engineers - 2008 - pag 43).
 \end{itemize}
-\begin{figure}
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=%
 0.50\textwidth]{isofoniche}
@@ -198,7 +199,7 @@ Per misurare quindi la risposta all'impulso riproduciamo il segnale attraverso l
 
 Il segnale originale consiste in uno sweep esponenziale il quale parte dalla frequenza $f_1$, termina a frequenza $f_2$ in $t$ secondi.
 
-Il segnale riverberato conterrà al suo interno componenti armoniche non presenti nell’originale, che corrispondono alla risposta lineare in frequenza dello spazio.
+Il segnale riverberato conterrà al suo interno componenti spettrale non presenti nell’originale, che corrispondono alla risposta lineare in frequenza dello spazio.
 Attraverso un processo di convoluzione, ampiamente spiegato e perfezionato dal prof. A Farina, siamo in grado di restituire la risposta all'impulso del sistema lineare.
 
 È da tenere conto che però una singola registrazione non è in grado di descrivere tutto lo spazio. La risposta all’impulso, come già detto, è relativa soltanto al punto in cui è posizionato il ricevitore e soltanto per il punto da cui è emesso il suono. Per la mappatura dello spazio per restituire un'immagine fedele dello spazio sono necessarie numerose registrazioni. Come per una fotografia, maggiore è il numero di “pixel”, più definita sarà l’immagine. Per questo è un lavoro che, soprattutto per luoghi ampi, richiede moltissimo tempo e spesso si tende ad effettuare un numero di registrazioni non necessario a restituire un modello fedele.

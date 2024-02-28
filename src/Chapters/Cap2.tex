@@ -56,6 +56,7 @@ H(s)=\frac{\prod_{k=1}^k (s+zk)}{\prod_{n=1}^n (s+pn)}
 Semplificando il tutto e ricollegandoci all’argomento principale, è necessario comprendere che poli e zeri corrispondono alla frequenza di taglio del filtro che la funzione di trasferimento rappresenta.
 \section{Tipologie di filtro}
 Come detto in precedenza, i filtri si distinguono per via della loro architettura alla quale consegue un diverso comportamento. Ecco alcune tipologie di filtro, tra le più comuni:
+
 \subsection{Low-Pass}
 Permette l’attenuazione delle frequenze superiori alla frequenza di taglio.
 La sua funzione di trasferimento è la seguente
@@ -63,36 +64,49 @@ La sua funzione di trasferimento è la seguente
 H(s)=\frac{1}{1+st}
 \end{equation}
 dove con $st$ indichiamo la frequenza di taglio.
-La risposta in frquenza ottenuta è la seguente
-\begin{center}
+
+\begin{figure}[h]
+\centering
 \includegraphics[width=%
 0.50\textwidth]{lp}
-\end{center}
+\caption{Diagramma di Bode di un filtro passa basso \newline \scriptsize{ da D. Davis - Sound System Engineering - 2013}}
+\label{fig:lp}
+\end{figure}
+
 \subsection{High-Pass}
 Permette l’attenuazione delle frequenze inferiori alla frequenza di taglio.
-La sua funzione di trasferimento è la seguente
+La sua funzione di trasferimento è in figura \ref{fig:hp}
+
 \begin{equation}
 H(s)=\frac{st}{1+st}
 \end{equation}
+
 dove con $st$ indichiamo sempre la frequenza di taglio.
 La risposta in frquenza ottenuta è la seguente
-\begin{center}
+\begin{figure}[htp]
+\centering
 \includegraphics[width=%
 0.50\textwidth]{hp}
-\end{center}
+\caption{Diagramma di Bode di un filtro passa alto}
+\label{fig:hp}
+\end{figure}
+
 \subsection{Band-Pass}
 Permette il passaggio solo ad una determinata banda di frequenze.
 la sua funzione di trasferimento è la seguente
 \begin{equation}
 H(s)=\frac{(1+st_1)(1+st_4)}{(1+st_2)(1+st_3)}
 \end{equation}
-Considerando che $t_1>t_2>t3_>t_4$ e che il calcolo di poli e zeri risulta: $z_1=1/t_1$, $z_2=1/t_4$, $p1_=1/t_2$, $p_2=1/t_3$
+Considerando che $t_1>t_2>t3_>t_4$ e che il calcolo di poli e zeri risulta: $z_1=1/t_1$, $z_2=1/t_4$, $p1_=1/t_2$, $p_2=1/t_3$ \dots
 
-La risposta in frquenza ottenuta è la seguente
-\begin{center}
+La risposta in frquenza ottenuta è in figura \ref{fig:bp}
+\begin{figure}[htp]
+\centering
 \includegraphics[width=%
 0.50\textwidth]{bp}
-\end{center}
+\caption{Diagramma di Bode di un filtro passa banda}
+\label{fig:bp}
+\end{figure}
 
 
 \section{Filtri Digitali}
@@ -112,7 +126,7 @@ Possedere una risposta all’impulso unitario limitata comporta, inoltre, una st
 (Lindoro del Duca - Musica Digitale - pag 85)
 
 \section{Delay e Utilizzo}
-Il Delay è il ritardo temporale imposto ad un evento sonoro. Il Delay può essere percepito soltanto se messo in relazione ad un altro segnale, ovvero, il suono stesso ma non ritardato.
+Il \emph{Delay} è il ritardo temporale imposto ad un evento sonoro. Il Delay può essere percepito soltanto se messo in relazione ad un altro segnale, ovvero, il suono stesso ma non ritardato.
 Questo fenomeno si manifesta in due situazioni: quando, in un ambiente riverberante il suono diretto raggiunge l’ascoltatore prima delle sue riflessioni, oppure quando, un delay elettrico, è volontariamente inserito per pareggiare due sorgenti sonore e simulare un’ unica provenienza.
 
 Il delay è inoltre un componente chiave nella costruzione dei filtri digitali.

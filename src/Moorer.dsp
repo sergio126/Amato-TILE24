@@ -27,7 +27,13 @@ altezza = hslider("profondità",1,1,300,.001); //profondità stanza
 larg = hslider("larghezza",1,1,300,.001); //larghezza stanza
 lung = hslider("altezza",1,1,300,.001); //altezza soffitto
 
-velSuono = 343;
+atm = 1;
+press = 76 * (atm);
+temp = hslider("temperatura",20,-220,300,.001);
+stp = (1.2930, 0.7710, 1.2507, 3.2170, 1.9760, 0.0899, 0.7170, 1.2500,1.4290, 0.804);
+p = (ba.take(1,stp)*press)/(press * (1 + (0.00367*temp)));
+velSuono = ((1.402*atm*(1.013*10^5))/p) : sqrt ;
+//process = velSuono;
 
 assLat = hslider("assLat",.1,.1,.99,.001); //Coefficiente di assorbimento pareti laterali
 assFro = hslider("assFro",.1,.1,.99,.001);//Coefficiente di assorbimento pareti frontali
